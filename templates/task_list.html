@@ -1,0 +1,19 @@
+{% extends'base.html' %}
+
+{% block content %}
+
+<p>
+<img src="/static/youjo.jpg" style="width: 30px;">
+{{user_name}}さんのページ</p>
+<table border="1">
+    {% for item in task_list %}
+    <tr>
+        <td>{{item["id"]}}</td>
+        <td>{{item["task"]}}</td>
+        <td><a href="/edit/{{item['id']}}">へんしゅう</a></td>
+        <td><a href="delete/{{item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add">追加はこちらー</a>
+{% endblock %}

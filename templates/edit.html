@@ -1,0 +1,12 @@
+{% extends'base.html' %}
+
+{% block content %}
+
+<form action="/edit" method="post">
+    <input type="hidden" value="{{task['id']}}" name="task_id">
+    <input type="text" value="{{task['task']}}" size="100" maxlength="100" name = "task">
+    <input type="submit" name="save" value="編集する">
+
+</form>
+<a href="/list">リストはこちらー</a>
+{% endblock %}
